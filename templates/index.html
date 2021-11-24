@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'styles.css') }}">
+</head>
+
+<body>
+   <div style = "margin-left: 40%">
+      <form class = "formulaire" action='/api/spamdetector/' method='POST'>
+         <h3>Spam Detector</h3>
+         <div class = "container-fluid" >
+            <textarea name="mail" placeholder='Please enter your mail' cols="40" rows="10" >{{mail}}</textarea>
+         </div>
+         <div class= "monbouton">
+            <input type='submit' value='Evaluate'>
+         </div>
+      </form>
+
+      {% if result %}
+         <div class = "resultat">
+            <p>{{result}}</p>
+         </div>
+      {% endif %}
+   </div>
+</body>
+
+
+</html>
